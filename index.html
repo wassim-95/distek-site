@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#1E3A50">
 <link rel="canonical" href="https://distek.tn/">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -15,8 +16,12 @@
 <meta property="og:title" content="DISTEK DISTRIBUTION — Distribution et commerce de gros">
 <meta property="og:description" content="Notre nouveau site est en cours de construction. Contactez-nous : contact@distek.tn.">
 <meta property="og:url" content="https://distek.tn/">
-<meta property="og:image" content="https://distek.tn/assets/logo.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://distek.tn/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo DISTEK DISTRIBUTION">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://distek.tn/assets/og-image.png">
 
 <style>
 :root{
@@ -35,7 +40,7 @@ a{color:inherit}
 
 /* Logo (image + repli texte si le fichier est absent) */
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
-.brand img{display:block;height:44px;width:auto}
+.brand img{display:block;height:56px;width:auto}
 .brand .wordmark{display:none;font-weight:800;letter-spacing:.04em;font-size:1.05rem}
 .brand .wordmark b{color:var(--orange)}
 .brand.no-img .wordmark{display:inline}
@@ -62,13 +67,16 @@ header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1p
 .hero{position:relative;overflow:hidden;background:var(--grey);padding:88px 0 96px}
 .hero::before{content:"";position:absolute;right:-120px;top:-80px;width:460px;height:460px;background:var(--navy);opacity:.07;transform:skewX(-14deg);border-radius:32px}
 .hero::after{content:"";position:absolute;left:-60px;bottom:-90px;width:260px;height:260px;background:var(--orange);opacity:.14;transform:rotate(18deg);border-radius:28px}
-.hero .container{position:relative;z-index:1}
+.hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero-visual{display:flex;justify-content:center}
+.hero-visual img{width:min(100%,340px);height:auto;display:block}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .badge{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--white);font-weight:700;font-size:.8rem;letter-spacing:.08em;padding:8px 16px;border-radius:999px}
 .badge::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--orange)}
-.hero-logo{margin:28px 0 8px}
-.hero-logo img{height:84px;width:auto;display:block}
-.hero-name{margin:0;font-size:1rem;font-weight:800;letter-spacing:.14em;color:var(--navy)}
-.hero h1{margin:18px 0 16px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.12;max-width:16em;color:var(--navy)}
+.hero-logo{margin:24px 0 4px}
+.hero-logo img{height:150px;width:auto;display:block}
+.hero-name{margin:6px 0 0;font-size:1rem;font-weight:800;letter-spacing:.14em;color:var(--navy)}
+.hero h1{margin:24px 0 16px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.12;max-width:16em;color:var(--navy)}
 .hero h1 span{color:var(--navy);box-shadow:inset 0 -.28em 0 var(--orange)}
 .hero p.lead{font-size:1.15rem;max-width:36em;margin:0 0 32px}
 .actions{display:flex;flex-wrap:wrap;gap:14px}
@@ -100,8 +108,8 @@ h2{margin:0 0 18px;font-size:clamp(1.6rem,3.5vw,2.3rem);line-height:1.2;color:va
 /* Pied de page */
 footer{background:var(--navy);color:var(--white);padding:44px 0 28px}
 .foot{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center}
-footer .brand{color:var(--white)}
-footer .brand img{height:40px}
+footer .brand{background:var(--white);padding:10px 14px;border-radius:12px}
+footer .brand img{height:64px}
 .foot-info p{margin:0 0 4px}
 .foot-info a{color:var(--orange);font-weight:700;text-decoration:none}
 .foot-info a:hover{text-decoration:underline}
@@ -120,7 +128,10 @@ footer .brand img{height:40px}
 @media (max-width:860px){
   .cards{grid-template-columns:1fr}
   section{padding:64px 0}
-  .hero{padding:64px 0 72px}
+  .hero{padding:56px 0 64px}
+  .hero .container{grid-template-columns:1fr;gap:32px}
+  .hero-visual{order:-1;justify-content:flex-start}
+  .hero-visual img{width:150px}
   .menu-toggle{display:inline-flex}
   .nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--white);flex-direction:column;align-items:stretch;gap:0;padding:12px 24px 20px;border-bottom:1px solid var(--grey);box-shadow:0 12px 20px rgba(30,58,80,.1)}
   .nav ul.open{display:flex}
@@ -138,7 +149,7 @@ footer .brand img{height:40px}
 <header>
   <div class="container nav">
     <a class="brand" href="#accueil" aria-label="DISTEK DISTRIBUTION — Accueil">
-      <img src="assets/logo.png" alt="Logo DISTEK DISTRIBUTION" width="160" height="44">
+      <img src="assets/logo.png" alt="Logo DISTEK DISTRIBUTION" width="56" height="56">
       <span class="wordmark">DISTEK <b>DISTRIBUTION</b></span>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
@@ -159,16 +170,18 @@ footer .brand img{height:40px}
 <main id="contenu">
   <section class="hero" id="accueil">
     <div class="container">
+      <div class="hero-text">
       <span class="badge">SITE EN COURS DE CONSTRUCTION</span>
-      <div class="hero-logo">
-        <img src="assets/logo.png" alt="Logo DISTEK DISTRIBUTION" width="300" height="84">
-      </div>
-      <p class="hero-name">DISTEK DISTRIBUTION</p>
+      <p class="hero-name sr-only">DISTEK DISTRIBUTION</p>
       <h1>Votre partenaire en <span>distribution</span> et commerce de gros.</h1>
       <p class="lead">Nous préparons notre nouveau site web afin de mieux vous présenter nos activités, nos produits et nos solutions de distribution.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#contact">Nous contacter</a>
         <a class="btn btn-secondary" href="#activites">Découvrir nos activités</a>
+      </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/logo.png" alt="Logo DISTEK DISTRIBUTION" width="340" height="337">
       </div>
     </div>
   </section>
@@ -230,7 +243,7 @@ footer .brand img{height:40px}
   <div class="container">
     <div class="foot">
       <a class="brand" href="#accueil" aria-label="DISTEK DISTRIBUTION — Haut de page">
-        <img src="assets/logo.png" alt="Logo DISTEK DISTRIBUTION" width="160" height="40">
+        <img src="assets/logo.png" alt="Logo DISTEK DISTRIBUTION" width="64" height="64">
         <span class="wordmark">DISTEK <b>DISTRIBUTION</b></span>
       </a>
       <div class="foot-info">
@@ -250,8 +263,8 @@ footer .brand img{height:40px}
   document.querySelectorAll('.brand img').forEach(function(img){
     img.addEventListener('error', function(){ img.style.display='none'; img.closest('.brand').classList.add('no-img'); });
   });
-  var heroImg = document.querySelector('.hero-logo img');
-  if (heroImg) heroImg.addEventListener('error', function(){ heroImg.closest('.hero-logo').style.display='none'; });
+  var heroImg = document.querySelector('.hero-visual img');
+  if (heroImg) heroImg.addEventListener('error', function(){ heroImg.closest('.hero-visual').style.display='none'; });
 
   // Menu mobile
   var toggle = document.getElementById('menuToggle'), menu = document.getElementById('menu');
